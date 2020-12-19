@@ -1,0 +1,39 @@
+----[ Overview
+
+py3kcap is a simple libpcap interface for python 3.2.  The intent is to provide both a object oriented and structured interface to libpcap for python3. The current version is only tested on linux . 
+
+---[ Install
+
+
+tar xzf py3kcap.tar.gz 
+cd py3kcap
+sudo python3.2 setup.py install
+
+---[ Todo
+
+Implement file operations 
+Fix OSX segfault issues 
+modify setup to build for each OS
+Improve code documentation 
+
+---[ Example Use
+
+Python 3.1.3 (r313:86834, Nov 28 2010, 10:01:07) 
+[GCC 4.4.5] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from py3kcap import pycap
+>>> import sys
+>>> packet = pycap(interface="eth0",count=1)
+>>> for data in packet:
+...             for i in data:
+...                     sys.stdout.write(hex(i))
+... 
+0x03
+0x03
+0xc3
+0x9f4
+0xf04
+0x13
+---[ Contact
+Johnathan Norman - jnorman <at> exploitscience.org
+
